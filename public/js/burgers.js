@@ -1,12 +1,12 @@
 $(function () {
 
-     $("#addburger").on("submit", function (event) 
+     $("#addburgerbtn").on("click", function (event) 
     {
 
         event.preventDefault();
 
         var newBurger = {
-            burger_name: $("#addburger [name=burger_name]").val().trim(),
+            burger_name: $("#burger").val().trim(),
         };
 
         $.ajax("/api/burgers", {
