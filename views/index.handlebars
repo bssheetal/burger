@@ -1,0 +1,29 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="card">
+            <img class="card-img-top" src="https://cdn.pixabay.com/photo/2016/06/29/18/46/burger-1487481__340.png" alt="Card image cap">
+            <h1 class="display-4">Eat Da Burger</h1>
+        </div>
+    </div>
+</div>
+
+<h2>Add a Burger</h2>
+<form id="addburger" class="button-size">
+    <div class="form-group">
+        <input type="text" name="burger_name">
+    </div>
+    <div>
+        <button id="addburgerbtn" type="submit">Add Burger</button>
+    </div>
+
+</form>
+
+<ul>
+    {{#each burgers}}
+    <li>
+            <p>{{this.burger_name}}
+            <button data-devourid="{{this.id}}" class="devburger">Devour It!</button>
+            </p>
+    </li>
+    {{/each}}
+</ul>

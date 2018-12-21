@@ -13,13 +13,21 @@ var orm = {
         });
     },
 
-    // create:function(tablename,cols,cb)
-    // {
-    //     connection.query("INSERT INTO"+ cols.toString()+"VALUES (??"
-    //     {
+    create:function(tablename,cols,vals,cb)
+    {
+        var querystring="INSERT INTO"+ " "+tablename+"("+cols.toString()+")"+"VALUES (?)";
+        console.log(querystring);
+        connection.query(querystring,vals,function(err,result)
+        { if(err)
+            {
+                throw err;
+            }
 
-    //     }
-    // }
+            cb(result);
+
+        });
+        
+    }
 
 }
 

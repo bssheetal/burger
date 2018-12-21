@@ -11,8 +11,19 @@ router.get("/",function(req,res)
             burgers:data
         };
         console.log(hbsobject);
-        res.send(hbsobject);
-        //res.render("")
+        //res.send(hbsobject);
+        res.render("index",hbsobject);
+    });
+});
+
+router.post("/api/burgers",function(req,res)
+{
+    burger.create([
+        "burger_name"
+    ],[req.body.burger_name],function(result)
+    {
+        
+        res.redirect('/');
     });
 });
 
