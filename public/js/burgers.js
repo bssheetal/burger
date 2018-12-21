@@ -1,7 +1,7 @@
 $(function () {
 
-    // $("#addburger").on("submit", function (event) 
-    $(("#addburgerbtn").on("click",function(event){
+     $("#addburger").on("submit", function (event) 
+    {
 
         event.preventDefault();
 
@@ -19,6 +19,7 @@ $(function () {
                 location.reload();
             }
         );
-    }))
+    });
 });
+
 
