@@ -20,6 +20,29 @@ $(function () {
             }
         );
     });
+
+   $("#devourit").on("click",function(event)
+   {
+       //add this prevent default otherwise both PUT and POST get executed
+       event.preventDefault();
+       var id=$(this).data("id");
+       var newstate=$(this).data(true);
+       var newdevourstate={
+        devoured:newstate
+       };
+
+       $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: newdevourstate
+      }).then(
+        function() {
+          console.log("changed devour to", newdevourstate);
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      );
+   })
+
 });
 
 

@@ -18,12 +18,32 @@
 
 </form>
 
+
+
 <ul>
     {{#each burgers}}
+    {{#unless this.devoured}}
     <li>
-       <form action="/api/burgers/" method="POST">
-                <textarea type="text" name="burger">{{this.burger_name}}</textarea>
-                <button type="submit" class='burgerAvailable' data-planid="{{this.id}}">Devour it</button>     
+        <form action="/api/burgers" method="POST">
+            <textarea type="text" name="burger">{{this.burger_name}}</textarea>
+            <button id="devourit" type="submit" class='burgerAvailable' data-id="{{this.id}}" >Devour it</button>
+        </form>
     </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Devoured it</h2>
+<ul>
+    {{#each burgers}}
+    {{#if this.devoured}}
+    <div class='burgerEaten'>
+         <form action="/api/burgers/{{this.id}}" method="PUT">
+        <div>
+            <textarea type="text" name="burger">{{this.burger_name}}</textarea>
+        </div>
+        </form>
+    </div>
+    {{/if}}
     {{/each}}
 </ul>
