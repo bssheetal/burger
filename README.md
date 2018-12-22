@@ -11,7 +11,7 @@ The user may enter any burger name to add it to the menu. This also adds the new
 # DesignPattern
  Used MVC design pattern in building this module and the project structure looks like this
  
- ├── config
+├── config
 │   ├── connection.js
 │   └── orm.js
 │ 
