@@ -8,6 +8,42 @@ This application demonstrates a simple full stack application with a front end i
 
 The user may enter any burger name to add it to the menu. This also adds the new burger entry into the MySQL database. The initial burger entry is added as available on the menu . The user may then eat any burger by clicking on Devour it, which moves it into the adjacent column and updates its status accordingly in the database.
 
+# DesignPattern
+ Used MVC design pattern in building this module and the project structure looks like this
+ 
+ ├── config
+│   ├── connection.js
+│   └── orm.js
+│ 
+├── controllers
+│   └── burgers_controller.js
+│
+├── db
+│   ├── schema.sql
+│   └── seeds.sql
+│
+├── models
+│   └── burger.js
+│ 
+├── node_modules
+│ 
+├── package.json
+│
+├── public
+│   └── assets
+│       ├── css
+│       │   └── burger_style.css
+│       └── img
+│           └── burger.png
+│   
+│
+├── server.js
+│
+└── views
+    ├── index.handlebars
+    └── layouts
+        └── main.handlebars
+ 
 # Demo
 
 The demo of the burger eating application can be found here.
