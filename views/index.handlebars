@@ -22,7 +22,8 @@
     {{#each burgers}}
     <li>
        <form action="/api/burgers/" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>     
+                <textarea type="text" name="burger">{{this.burger_name}}</textarea>
+                <button type="submit" class='burgerAvailable' data-planid="{{this.id}}">Devour it</button>     
     </li>
     {{/each}}
 </ul>
